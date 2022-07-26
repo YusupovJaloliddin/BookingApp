@@ -1,10 +1,9 @@
 import express from "express";
-import dotenv from "dotenv";
+import { authLogin, authRegister } from "../controllers/auth.js";
 
 const router=express.Router();
-dotenv.config();
-
-
+router.post("/register",authRegister)
+router.post("/login",authLogin)
 
 
 export default router;
