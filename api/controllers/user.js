@@ -12,7 +12,7 @@ export const updateUser=async(req,res,next)=>{
 }
 export const deleteUser=async(req,res,next)=>{
     try {
-        const User=await User.findByIdAndDelete(req.params.id);    
+        const user=await User.findByIdAndDelete(req.params.id);    
         res.status(200).json({msg:"Deleted succesfully"});
         
     } catch (error) {
