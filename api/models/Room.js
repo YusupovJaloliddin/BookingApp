@@ -1,23 +1,22 @@
 import mongoose from "mongoose";
-const userSchema=new mongoose.Schema({
-    username:{
+const roomSchema=new mongoose.Schema({
+    title:{
         type:String,
         required:true,
-        unique:true
     },
-    email:{
+    price:{
         type:String,
         required:true,
-        unique:true,
     },
-    password:{
+    desc:{
         type:String,
         required:true
     },
-    isAdmin:{
-        type:Boolean,
-        default:false
-    }
+    maxPeople:{
+        type:Number,
+        required:true
+    },
+    roomNumbers:[{number:Number,unavailableDates:{type:[Date]}}]
 },{timestamps:true})
 
-export default mongoose.model("Room",userSchema);
+export default mongoose.model("Room",roomSchema);
